@@ -1,0 +1,4 @@
+/site/www/vendor
+vagrant/.vagrant
+site/www/.idea/
+/.idea/
