@@ -15,6 +15,11 @@ Vagrant.configure("2") do |config|
   config.vm.box = "maxus/digitalport"
   config.vm.box_version = "2"
 
+    config.vm.provider "virtualbox" do |v|
+    v.customize [ "modifyvm", :id, "--uart1", "0x3F8", "4" ]
+    v.customize [ "modifyvm", :id, "--uartmode1", "file", File.join(Dir.pwd, "ubuntu-xenial-16.04-cloudimg-console.log") ]
+  end
+
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
   # `vagrant box outdated`. This is not recommended.
@@ -44,7 +49,7 @@ Vagrant.configure("2") do |config|
   # the path on the host to the actual folder. The second argument is
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
-  config.vm.synced_folder "/Users/maxus/Development/digital_port_tz/site/www", "/var/www/"
+  config.vm.synced_folder "/Users/maxus/Development/ololo/digital_port/site/www", "/var/www/"
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
