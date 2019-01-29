@@ -8,13 +8,6 @@
 ```bash
 $ git clone https://github.com/gmaxus/digital_port.git
 ```
-
-## Установка необходимых библиотек
-```bash
-$ cd digital_port/site/www 
-$ composer install
-```
-
 ## Настройка Vagrant файла
 В файле
 ```bash
@@ -30,6 +23,14 @@ config.vm.synced_folder "/Users/maxus/Development/digital_port_tz/site/www", "/v
 $ cd ../../vagrant
 $ vagrant up
 ```
+
+## Установка необходимых библиотек
+```bash
+$ vagrant ssh
+$ cd /var/www 
+$ composer install
+```
+
 ## Просмотр приложения
 [http://127.0.0.1:8080/](http://127.0.0.1:8080/)
 
